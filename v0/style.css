@@ -1,23 +1,23 @@
 body{
     margin: 0px;
 }
-.Switch{
+.Slider{
     float: left;
     position: relative;
     display: block;
     width: 500px;
     height: 30px;
     /*background-color: #e8e8e8;*/
-    --Switch-border-radius:30px;
-    --Switch-border-width:1px;
-    border-radius: var(--Switch-border-radius);
+    --Slider-border-radius:30px;
+    --Slider-border-width:1px;
+    border-radius: var(--Slider-border-radius);
     /*border-style: solid;
-    border-width: var(--Switch-border-width);
+    border-width: var(--Slider-border-width);
     border-color: #c7c7c7;*/
     -webkit-user-select:none;
 }
-.Switch > .Button{
-    --Button-border-radius:calc(var(--Switch-border-radius) - var(--Switch-border-width));
+.Slider > .Button{
+    --Button-border-radius:calc(var(--Slider-border-radius) - var(--Slider-border-width));
     position: absolute;    
     display:flex;
     align-items:center;
@@ -29,11 +29,11 @@ body{
     border-radius: var(--Button-border-radius);
     transition: left .5s ease-out,background-color .3s ease-out;
 }
-.Switch > .Button:hover,.Switch > .Button.active{
+.Slider > .Button:hover,.Slider > .Button.active{
     background-color: #72c9ff;
 }
-.Switch > .RateBg{
-    --Button-border-radius:calc(var(--Switch-border-radius) - var(--Switch-border-width));
+.Slider > .RateBg{
+    --Button-border-radius:calc(var(--Slider-border-radius) - var(--Slider-border-width));
     position: absolute; 
     display: block;
     width: 100%;
@@ -41,13 +41,13 @@ body{
     background-color: #e8e8e8;
     border-radius: var(--Button-border-radius);
     border-style: solid;
-    border-width: var(--Switch-border-width);
+    border-width: var(--Slider-border-width);
     border-color: #c7c7c7;
     box-sizing: border-box;
     transition: width .5s ease-out,background-color .5s ease-out;
 }
-.Switch > .Rate{
-    --Button-border-radius:calc(var(--Switch-border-radius) - var(--Switch-border-width));
+.Slider > .Rate{
+    --Button-border-radius:calc(var(--Slider-border-radius) - var(--Slider-border-width));
     position: absolute; 
     display: block;
     height: 100%;
@@ -55,15 +55,15 @@ body{
     border-radius: var(--Button-border-radius) 0px 0px var(--Button-border-radius);
     transition: width .5s ease-out,background-color .5s ease-out;
 }
-.Switch.disable{
+.Slider.disable{
     /*background-color: #8e8e8e;*/
 }
-.Switch.disable > .Button{
+.Slider.disable > .Button{
     background-color: #717171;
 }
-.Switch.disable > .Rate{
+.Slider.disable > .Rate{
     background-color: #3b3b3b;
 }
-.Switch.disable > .RateBg{
+.Slider.disable > .RateBg{
     background-color: #3b3b3b;
 }

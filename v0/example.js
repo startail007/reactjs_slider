@@ -47,8 +47,11 @@ var Style = function(pElement) {
     },
   };
 };
-
-var Switch = React.createClass({
+var getPosition = function(el) {
+  var Rect = el.getBoundingClientRect();
+  return {x:Rect.left + window.scrollX,y: Rect.top + window.scrollY};
+}
+var Slider = React.createClass({
     getInitialState: function() {
         return {enable:(this.props.enable==undefined)?true:this.props.enable,rate:(this.props.rate==undefined)?0:this.props.rate,Mousedown:false};
     },
@@ -86,11 +89,14 @@ var Switch = React.createClass({
         EventUtil.removeHandler(window, 'mouseup', this.onMouseUp);
         EventUtil.removeHandler(this.refs.switch, 'mousemove', this.onMouseMove);
     },
-    onClick: function(e) {        
-        console.log(e.pageX,e.clientX,e.timeStamp);
+    onClick: function(e) {
+        if(this.state.enable){  
+            var p = getPosition(this.refs.switch);        
+            this.SetRate((e.clientX - p.x-this.btnW*0.5)/this.maxX);  
+        }
     },
     render: function() {
-        var SwitchClass = "Switch " + (this.state.enable ? "" : "disable");
+        var SliderClass = "Slider " + (this.state.enable ? "" : "disable");
         //var ButtonClass = "Button " + (this.state.open ? "active" : "");
         var title = (this.state.enable ? Math.round(100*this.state.rate) + "%" : "禁用");
         var ButtonStyle = {};
@@ -104,7 +110,7 @@ var Switch = React.createClass({
         ButtonStyle.left = this.state.rate*this.maxX + 'px';
         RateStyle.width= (this.btnW*0.5+this.state.rate*this.maxX) + "px";
         return (
-                <div ref = "switch" className = {SwitchClass} title = {title} >
+                <div ref = "switch" className = {SliderClass} title = {title} >
                     <div className = "RateBg" onClick = {this.onClick}></div>
                     <div className = "Rate"  style = {RateStyle} onClick = {this.onClick}></div>
                     <label ref = "button" className = {ButtonClass}  style = {ButtonStyle} onMouseDown = {this.onMouseDown}></label>
@@ -113,14 +119,14 @@ var Switch = React.createClass({
     }
 });
 ReactDOM.render(
-    <Switch rate = {0} />,
+    <Slider rate = {0} />,
     document.getElementById('example01')
 );
 ReactDOM.render(
-    <Switch rate = {0.5} />,
+    <Slider rate = {0.5} />,
     document.getElementById('example02')
 );
 ReactDOM.render(
-    <Switch rate = {0} enable = {false}/>,
+    <Slider rate = {0} enable = {false}/>,
     document.getElementById('example03')
 );
