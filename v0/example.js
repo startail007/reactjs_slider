@@ -70,12 +70,12 @@ var Slider = React.createClass({
             this.SetRate((e.clientX - this.LocX)/this.maxX);
             this.setState({Mousedown:true})
             EventUtil.addHandler(window, 'mouseup', this.onMouseUp);
-            EventUtil.addHandler(this.refs.switch, 'mousemove', this.onMouseMove);
+            EventUtil.addHandler(this.refs.slider, 'mousemove', this.onMouseMove);
         }
     },
     SetRate:function(value){
         this.btnW = Style(this.refs.button).width
-        this.maxX = Style(this.refs.switch).width - this.btnW;
+        this.maxX = Style(this.refs.slider).width - this.btnW;
         var rate = Math.min(Math.max(value,0),1);
         this.setState({rate:rate});  
     },
@@ -87,11 +87,11 @@ var Slider = React.createClass({
     onMouseUp: function(e) {        
         this.setState({Mousedown:false})
         EventUtil.removeHandler(window, 'mouseup', this.onMouseUp);
-        EventUtil.removeHandler(this.refs.switch, 'mousemove', this.onMouseMove);
+        EventUtil.removeHandler(this.refs.slider, 'mousemove', this.onMouseMove);
     },
     onClick: function(e) {
         if(this.state.enable){  
-            var p = getPosition(this.refs.switch);        
+            var p = getPosition(this.refs.slider);        
             this.SetRate((e.clientX - p.x-this.btnW*0.5)/this.maxX);  
         }
     },
@@ -110,7 +110,7 @@ var Slider = React.createClass({
         ButtonStyle.left = this.state.rate*this.maxX + 'px';
         RateStyle.width= (this.btnW*0.5+this.state.rate*this.maxX) + "px";
         return (
-                <div ref = "switch" className = {SliderClass} title = {title} >
+                <div ref = "slider" className = {SliderClass} title = {title} >
                     <div className = "RateBg" onClick = {this.onClick}></div>
                     <div className = "Rate"  style = {RateStyle} onClick = {this.onClick}></div>
                     <label ref = "button" className = {ButtonClass}  style = {ButtonStyle} onMouseDown = {this.onMouseDown}></label>
