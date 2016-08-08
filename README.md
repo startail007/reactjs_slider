@@ -12,7 +12,7 @@ slider 滑桿功能
 |enable|`true`|啟動,值(true或false)|
 ### 默認風格
 該組件會自動嵌入了一些必要的風格。
-
+```css
     .Slider{
         float: left;
         position: relative;
@@ -49,11 +49,11 @@ slider 滑桿功能
     .Slider.disable > .RateBg{
         background-color: #3b3b3b;
     }
-
+```
 ### 設定參考
-
+```javascript
     <Slider rate = {0} length = {400} outRadius = {15} inRadius = {5} enable = {ture}/>
-
+```
 ### 許可
 
 MIT
