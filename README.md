@@ -1,7 +1,7 @@
 slider 滑桿功能
 =========================
 ### 演示
-[ http://virtools.github.io/slider/v1/index.html ]
+[ http://virtools.github.io/reactjs_slider/v1/index.html ]
 ### 設置
 |設置|默認值|描述|
 |---|---|---|
