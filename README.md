@@ -1,4 +1,4 @@
-slider 滑桿功能
+滑桿功能(slider)
 =========================
 ### 演示
 [線上觀看](http://virtools.github.io/reactjs_slider/v1/index.html)
