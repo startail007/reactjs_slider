@@ -53,7 +53,7 @@ slider 滑桿功能
         background-color: #3b3b3b;
     }
 
-### 例
+### 設定參考
 
     <Slider rate = {0} length = {400} outRadius = {15} inRadius = {5} enable = {ture}/>
 
