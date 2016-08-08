@@ -13,46 +13,46 @@ slider 滑桿功能
 ### 默認風格
 該組件會自動嵌入了一些必要的風格。
 ```css
-    .Slider{
-        float: left;
-        position: relative;
-        display: block;
-        -webkit-user-select:none;
-    }
-    .Slider > .Button{
-        position: absolute;    
-        display:block;
-        background-color: rgb(90, 192, 255);
-        transition: left .5s ease-out,background-color .3s ease-out;
-    }
-    .Slider > .Button:hover,.Slider > .Button.active{
-        background-color: rgb(114, 201, 255);
-    }
-    .Slider > .RateBg{
-        position: absolute; 
-        display: block;
-        background-color: #e8e8e8;
-        transition: width .5s ease-out,background-color .5s ease-out;
-    }
-    .Slider > .Rate{
-        position: absolute; 
-        display: block;
-        background-color: #06588b;
-        transition: width .5s ease-out,background-color .5s ease-out;
-    }
-    .Slider.disable > .Button{
-        background-color: #717171;
-    }
-    .Slider.disable > .Rate{
-        background-color: #3b3b3b;
-    }
-    .Slider.disable > .RateBg{
-        background-color: #3b3b3b;
-    }
+.Slider{
+    float: left;
+    position: relative;
+    display: block;
+    -webkit-user-select:none;
+}
+.Slider > .Button{
+    position: absolute;    
+    display:block;
+    background-color: rgb(90, 192, 255);
+    transition: left .5s ease-out,background-color .3s ease-out;
+}
+.Slider > .Button:hover,.Slider > .Button.active{
+    background-color: rgb(114, 201, 255);
+}
+.Slider > .RateBg{
+    position: absolute; 
+    display: block;
+    background-color: #e8e8e8;
+    transition: width .5s ease-out,background-color .5s ease-out;
+}
+.Slider > .Rate{
+    position: absolute; 
+    display: block;
+    background-color: #06588b;
+    transition: width .5s ease-out,background-color .5s ease-out;
+}
+.Slider.disable > .Button{
+    background-color: #717171;
+}
+.Slider.disable > .Rate{
+    background-color: #3b3b3b;
+}
+.Slider.disable > .RateBg{
+    background-color: #3b3b3b;
+}
 ```
 ### 設定參考
 ```javascript
-    <Slider rate = {0} length = {400} outRadius = {15} inRadius = {5} enable = {ture}/>
+<Slider rate = {0} length = {400} outRadius = {15} inRadius = {5} enable = {ture}/>
 ```
 ### 許可
 
