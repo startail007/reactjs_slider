@@ -9,7 +9,7 @@ slider 滑桿功能
 |length|`200`|滑桿長度|
 |outRadius|`20`|滑桿按鈕半徑大小及外線半徑大小|
 |inRadius|`10`|滑桿內線半徑大小|
-|enable|`true`|啟動|
+|enable|`true`|啟動,值(true或false)|
 ### 默認風格
 該組件會自動嵌入了一些必要的風格。
 
