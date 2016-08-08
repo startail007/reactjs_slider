@@ -40,9 +40,6 @@ slider 滑桿功能
         background-color: #06588b;
         transition: width .5s ease-out,background-color .5s ease-out;
     }
-    .Slider.disable{
-        /*background-color: #8e8e8e;*/
-    }
     .Slider.disable > .Button{
         background-color: #717171;
     }
