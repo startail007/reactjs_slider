@@ -55,5 +55,4 @@
 <Slider rate = {0} length = {400} outRadius = {15} inRadius = {5} enable = {ture}/>
 ```
 ### 許可
-
 MIT
